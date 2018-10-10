@@ -1,4 +1,4 @@
-package com.ue.projectplum;
+package com.ue.projectplum.assethandling;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
