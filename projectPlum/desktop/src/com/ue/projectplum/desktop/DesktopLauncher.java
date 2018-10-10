@@ -12,7 +12,7 @@ public class DesktopLauncher {
 	public static void main (String[] arg) {
 		projectPlum theGame = new projectPlum();
 		LwjglApplicationConfiguration cfg = new LwjglApplicationConfiguration();
-		cfg.title = "Planetary Strategery";
+		cfg.title = "Project Plum";
 		cfg.height = projectPlum.viewHeight;
 		cfg.width =  projectPlum.viewWidth;
 	
