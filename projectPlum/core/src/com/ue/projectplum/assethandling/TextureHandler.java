@@ -3,7 +3,7 @@ package com.ue.projectplum.assethandling;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 
-public class Images {
+public class TextureHandler {
 
 	// Base textures
 	public static final Texture missingTexture = loadTexture("missingTex");
