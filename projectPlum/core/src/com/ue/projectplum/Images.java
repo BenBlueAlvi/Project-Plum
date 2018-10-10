@@ -6,16 +6,18 @@ import com.badlogic.gdx.graphics.Texture;
 public class Images {
 
 	// Base textures
-	public static final Texture missingTexture = getImg("error");
+	public static final Texture missingTexture = loadTexture("missingTex");
 
-	public static Texture getImg(String path) {
+	public static Texture loadTexture(String path) {
 		try {
 			Texture t = new Texture(Gdx.files.internal("assets/img/" + path + ".png"));
 			return t;
 
 		} catch (Exception GdxRuntimeException) {
 			System.out.println("Error: Could not find: " + path + " substituting...");
-			Texture t = copy(missingTexture);
+
+      Texture t = new Texture(missingTexture.getTextureData());
+		
 			return t;
 		}
 	}
