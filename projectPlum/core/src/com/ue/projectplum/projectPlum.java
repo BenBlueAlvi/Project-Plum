@@ -11,8 +11,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
 
 
 public class projectPlum extends Game {
-	public static final int viewWidth = 1280;
-	public static final int viewHeight = 750;
+	public static final int viewWidth = 800;
+	public static final int viewHeight = 450;
 
 	public static final float aspectRatio = (float) viewWidth / (float) viewHeight;
 	public static int mapWidth = 1280 * 2;
