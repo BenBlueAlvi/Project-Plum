@@ -28,7 +28,7 @@ public class GameplayScreen implements Screen {
 
 	public Stage mainStage;
 	public Stage uiStage;
-	
+	private BaseActor missingTexture;
 	public Game game;
 	private ShapeRenderer shapeRender;
 
@@ -66,7 +66,9 @@ public class GameplayScreen implements Screen {
 
 		mainStage = new Stage(new ScreenViewport(camera));
 		uiStage = new Stage(uiViewport);
-
+		
+		missingTexture = new BaseActor("assets/error.png");
+		mainStage.addActor(missingTexture);
 		// Gdx.graphics.setFullscreenMode(Gdx.graphics.getDisplayMode());
 
 		shapeRender = new ShapeRenderer();
@@ -90,7 +92,7 @@ public class GameplayScreen implements Screen {
 
 		
 		
-		Gdx.gl.glClearColor(0.0F, 0.0F, 0, 1);
+		Gdx.gl.glClearColor(0.9F, 0.9F, 1, 1);
 		Gdx.gl.glViewport(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
