@@ -10,12 +10,14 @@ public class Images {
 
 	public static Texture loadTexture(String path) {
 		try {
-			Texture t = new Texture(Gdx.files.internal("assets/" + path + ".png"));
+			Texture t = new Texture(Gdx.files.internal("assets/img/" + path + ".png"));
 			return t;
 
 		} catch (Exception GdxRuntimeException) {
 			System.out.println("Error: Could not find: " + path + " substituting...");
-			Texture t = new Texture(missingTexture.getTextureData());
+
+      Texture t = new Texture(missingTexture.getTextureData());
+		
 			return t;
 		}
 	}
