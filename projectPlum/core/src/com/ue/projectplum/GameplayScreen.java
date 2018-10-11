@@ -22,6 +22,7 @@ import com.badlogic.gdx.utils.Scaling;
 import com.badlogic.gdx.utils.viewport.ScalingViewport;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.ue.projectplum.assethandling.AssetManager;
 
 
 public class GameplayScreen implements Screen {
@@ -58,7 +59,7 @@ public class GameplayScreen implements Screen {
 	}
 
 	public void create() {
-	
+		AssetManager.preLoadAssets();
 		camera = new OrthographicCamera();
 		uiCamera = new OrthographicCamera();
 		viewport = new ScreenViewport(camera);
@@ -67,8 +68,8 @@ public class GameplayScreen implements Screen {
 		mainStage = new Stage(new ScreenViewport(camera));
 		uiStage = new Stage(uiViewport);
 		
-		missingTexture = new BaseActor("assets/error.png");
-		mainStage.addActor(missingTexture);
+		
+
 		// Gdx.graphics.setFullscreenMode(Gdx.graphics.getDisplayMode());
 
 		shapeRender = new ShapeRenderer();

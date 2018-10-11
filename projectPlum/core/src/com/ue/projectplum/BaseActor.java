@@ -14,7 +14,7 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
-import com.ue.projectplum.assethandling.TextureHandler;
+import com.ue.projectplum.assethandling.AssetManager;
 
 public class BaseActor extends Group {
 	public TextureRegion region;
@@ -141,9 +141,9 @@ public class BaseActor extends Group {
 	 * @param cols the number of columns in the sprite sheet
 	 * @param rows the number of rows in the sprite sheet
 	 */
-	public void genAnimation(String path, int cols, int rows) {
+	/*public void genAnimation(String path, int cols, int rows) {
 		//load the sprite sheet
-		Texture sheet = TextureHandler.loadTexture(path);
+		Texture sheet = AssetManager.loadTexture(path);
 		//map the sprite sheet into rows and columns
 		TextureRegion[][] map = TextureRegion.split(sheet, sheet.getWidth()/cols, sheet.getHeight()/rows);
 		//create array of frames
@@ -163,7 +163,7 @@ public class BaseActor extends Group {
 		
 		
 		
-	}
+	}*/
 	/**
 	 * Sets the animation of the BaseActor
 	 * @param a the animation
