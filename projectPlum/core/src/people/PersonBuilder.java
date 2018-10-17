@@ -4,7 +4,7 @@ package people;
  * This class is for building people.
  * This means both pre-made and procedurally generated.
  * 
- * Developed by:
+ * Developers:
  * Coosome
  */
 
