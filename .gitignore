@@ -1,2 +1,4 @@
 /.metadata/
 /.recommenders/
+.project
+.settings/org.eclipse.buildship.core.prefs
