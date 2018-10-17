@@ -69,7 +69,7 @@ public class GameplayScreen implements Screen {
 		uiStage = new Stage(uiViewport);
 		
 		
-		missingTexture = new BaseActor(AssetManager.getTexture("missingTexture"));
+		missingTexture = new BaseActor("missingTexture");
 		mainStage.addActor(missingTexture);
 		// Gdx.graphics.setFullscreenMode(Gdx.graphics.getDisplayMode());
 

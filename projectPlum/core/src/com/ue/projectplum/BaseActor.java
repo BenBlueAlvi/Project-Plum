@@ -35,11 +35,9 @@ public class BaseActor extends Group {
 	
 	/**
 	 * Creates a BaseActor with a texture at path
-	 * @param path path to texture
-	 * @deprecated because of the new TextureHandler class preloading Textures
+	 * @param textureName name of texture file in assets
 	 */
-	@Deprecated
-	public BaseActor(String path) {
+	public BaseActor(String textureName) {
 		super();
 		region = new TextureRegion();
 		boundary = new Rectangle();
@@ -47,7 +45,9 @@ public class BaseActor extends Group {
 		elapsedTime = 0;
 		this.center = new Vector2();
 		
-		genTexture(path);
+		Texture t = AssetManager.getTexture(textureName);
+		
+		this.setTexture(t);
 		this.setOriginX(this.getWidth() / 2);
 		this.setOriginY(this.getHeight() / 2);
 		
