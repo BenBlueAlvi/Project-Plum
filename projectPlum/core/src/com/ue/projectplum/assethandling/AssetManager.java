@@ -32,9 +32,9 @@ public class AssetManager {
 	private static Asset<Sound>[] soundRegistry;
 	
 	
-	public static Asset[] sortRegistry(Asset[] ar) {
+	public static <T> Asset<T>[] sortRegistry(Asset<T>[] ar) {
 		for (int i = 1; i < ar.length; i++) {
-			Asset index = ar[i];
+			Asset<T> index = ar[i];
 			int j = i;
 			//follows string, sort greatest to least alphabetically
 			while (j > 0 && ar[j - 1].name.compareTo(index.name) == 1) {
@@ -50,7 +50,7 @@ public class AssetManager {
 	
 	
 	
-	private static Asset searchRegistry(Asset[] registry, int l, int r, String name) 
+	private static <T> Asset<T> searchRegistry(Asset<T>[] registry, int l, int r, String name) 
     { 
         if (r>=l) 
         { 
@@ -76,7 +76,7 @@ public class AssetManager {
         return null; 
     } 
 	
-	public static Asset searchRegistry(Asset[] registry, String name) {
+	private static <T> Asset<T> searchRegistry(Asset<T>[] registry, String name) {
 		return searchRegistry(registry, 0, registry.length-1, name);
 	}
 	
