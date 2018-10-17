@@ -140,10 +140,12 @@ public class BaseActor extends Group {
 	 * @param path the path to the texture
 	 * @param cols the number of columns in the sprite sheet
 	 * @param rows the number of rows in the sprite sheet
+	 * @deprecated AssetManager needs to be updated to handle this
 	 */
-	/*public void genAnimation(String path, int cols, int rows) {
+	@Deprecated
+	public void genAnimation(String path, int cols, int rows) {
 		//load the sprite sheet
-		Texture sheet = AssetManager.loadTexture(path);
+		Texture sheet = AssetManager.getTexture(path);
 		//map the sprite sheet into rows and columns
 		TextureRegion[][] map = TextureRegion.split(sheet, sheet.getWidth()/cols, sheet.getHeight()/rows);
 		//create array of frames
@@ -163,7 +165,7 @@ public class BaseActor extends Group {
 		
 		
 		
-	}*/
+	}
 	/**
 	 * Sets the animation of the BaseActor
 	 * @param a the animation

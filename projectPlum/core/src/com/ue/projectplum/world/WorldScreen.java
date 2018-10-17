@@ -1,4 +1,6 @@
-package com.ue.projectplum;
+package com.ue.projectplum.world;
+
+
 
 import java.util.ArrayList;
 
@@ -16,21 +18,21 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.utils.Json;
 import com.badlogic.gdx.utils.Scaling;
 import com.badlogic.gdx.utils.viewport.ScalingViewport;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.ue.projectplum.BaseActor;
+import com.ue.projectplum.projectPlum;
 import com.ue.projectplum.assethandling.AssetManager;
 
 
-public class GameplayScreen implements Screen {
+public class WorldScreen implements Screen {
 
 	public Stage mainStage;
 	public Stage uiStage;
-	private BaseActor missingTexture;
 	public Game game;
 	private ShapeRenderer shapeRender;
 
@@ -38,13 +40,13 @@ public class GameplayScreen implements Screen {
 
 	
 
-	private boolean hasFocusedOnSelectedPlanet;
-
 	private Camera camera;
 	private Camera uiCamera;
 	private Viewport viewport;
 	private Viewport uiViewport;
 	
+	
+	private BaseActor thing;
 
 
 	
@@ -54,13 +56,13 @@ public class GameplayScreen implements Screen {
 	
 	private Vector2 uiMousePos = new Vector2();
 
-	public GameplayScreen(Game g) {
+	public WorldScreen(Game g) {
 		game = g;
 		create();
 	}
 
 	public void create() {
-		AssetManager.preLoadAssets();
+	
 		camera = new OrthographicCamera();
 		uiCamera = new OrthographicCamera();
 		viewport = new ScreenViewport(camera);
@@ -70,9 +72,11 @@ public class GameplayScreen implements Screen {
 		uiStage = new Stage(uiViewport);
 		
 		
-		missingTexture = new BaseActor("missingTexture");
-		missingTexture.setPosition(100, 100);
-		mainStage.addActor(missingTexture);
+		thing = new BaseActor(AssetManager.getTexture("missingTexture"));
+		
+		mainStage.addActor(thing);
+		
+	
 		// Gdx.graphics.setFullscreenMode(Gdx.graphics.getDisplayMode());
 
 		shapeRender = new ShapeRenderer();
@@ -87,11 +91,7 @@ public class GameplayScreen implements Screen {
 
 	
 
-	
-
 		OrthographicCamera cam = (OrthographicCamera) mainStage.getCamera();
-		Vector2 center = new Vector2();
-		
 		cam.update();
 
 		
@@ -158,3 +158,4 @@ public class GameplayScreen implements Screen {
 	
 
 }
+
